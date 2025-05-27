@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Churn Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #3a3b3b;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+            margin-top: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #e3e7e7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .radio-group {
+            margin-bottom: 15px;
+        }
+        .radio-group label {
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer Churn Prediction Form</h1>
+    <form action="/predict" method="post">
+        <label for="credit_score">Credit Score:</label>
+        <input type="number" id="credit_score" name="credit_score" step="0.01" required>
+
+        <div class="radio-group">
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="0" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="1" required>
+            <label for="female">Female</label>
+        </div>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="tenure">Tenure:</label>
+        <input type="number" id="tenure" name="tenure" required>
+
+        <label for="balance">Balance:</label>
+        <input type="number" id="balance" name="balance" step="0.01" required>
+
+        <label for="num_of_products">Number of Products:</label>
+        <input type="number" id="num_of_products" name="num_of_products" required>
+
+        <div class="radio-group">
+            <label>Has Credit Card:</label>
+            <input type="radio" id="has_credit_card_yes" name="has_credit_card" value="1" required>
+            <label for="has_credit_card_yes">Yes</label>
+            <input type="radio" id="has_credit_card_no" name="has_credit_card" value="0" required>
+            <label for="has_credit_card_no">No</label>
+        </div>
+
+        <div class="radio-group">
+            <label>Is Active Member:</label>
+            <input type="radio" id="is_active_member_yes" name="is_active_member" value="1" required>
+            <label for="is_active_member_yes">Yes</label>
+            <input type="radio" id="is_active_member_no" name="is_active_member" value="0" required>
+            <label for="is_active_member_no">No</label>
+        </div>
+
+        <label for="estimated_salary">Estimated Salary:</label>
+        <input type="number" id="estimated_salary" name="estimated_salary" step="0.01" required>
+
+        <label for="geography">Geography:</label>
+        <select id="geography" name="geography" required>
+            <option value="0">France</option>
+            <option value="1">Germany</option>
+            <option value="2">Spain</option>
+        </select>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
